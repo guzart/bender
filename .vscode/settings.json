@@ -1,0 +1,10 @@
+{
+  "rust.mode": "rls",
+  "rust.rls": {
+    "executable": "/Users/arturo/.cargo/bin/rls"
+  },
+  "rust.rustup": {
+    "toolchain": "nightly-x86_64-apple-darwin",
+    "nightlyToolchain": "nightly-x86_64-apple-darwin"
+  }
+}
