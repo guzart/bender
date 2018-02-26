@@ -1,3 +1,9 @@
+dev:
+	watchexec --exts rs,tera,hbs --restart "cargo run"
+
+doc:
+	cargo doc --open
+
 docker:
 	docker build -t bender .
 
@@ -7,7 +13,9 @@ build:
 		-w /usr/src/myapp \
 		rust:1.23.0 cargo build --release
 
-update:
+setup:
 	rustup update && cargo update
+	cargo install watchexec
+	cargo update
 
 .PHONY: all

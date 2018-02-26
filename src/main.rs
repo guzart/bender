@@ -3,6 +3,11 @@
 
 extern crate rocket;
 
+#[macro_use]
+extern crate serde_derive;
+
+mod users;
+
 #[cfg(test)]
 mod tests;
 
@@ -12,5 +17,8 @@ fn hello() -> &'static str {
 }
 
 fn main() {
-  rocket::ignite().mount("/", routes![hello]).launch();
+  rocket::ignite()
+    .mount("/", routes![hello])
+    .mount("/users", users::routes())
+    .launch();
 }
